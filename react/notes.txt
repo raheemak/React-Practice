@@ -1,0 +1,21 @@
+Setting up project: 
+
+- Download Node.js: nodejs.org
+- Download yarn: https://yarnpkg.com/en/docs/install#windows-stable
+
+-Install web-server globally with this command: yarn global add live-server
+
+-Load react scripts into html file: 
+    <script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react@16.0.0/umd/react-dom.development.js"></script>
+    <script src="scripts/app.js"
+
+-Install Babel
+    yarn global add babel.cli@6.24.1
+-Set up yarn init file which will create a package.json file for you: <to outline project dependencies>
+    yarn init
+-Install env, and react presets: this will install the following dependencies for your project
+    yarn add babel-preset-react@6.24.1 babel-preset-env@1.5.2
+
+-Run babel...
+babel [inputfile] --out-file=[outputfile] --presets=env,react
