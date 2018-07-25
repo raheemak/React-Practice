@@ -17,12 +17,9 @@ class Main extends React.Component {
 	}
 
 	handleDeleteOptions(){
-		this.setState ( ()=> {
-			return {
-				options:[]
-			};
-		});
-	}
+		this.setState ( ()=> (
+			{ options:[]	}))
+		}
 
 	handleAddOption (option){
 
@@ -47,7 +44,7 @@ class Main extends React.Component {
 
 		return (
 		<div>
-    <Header title={app.title} subtitle={app.subtitle}/>
+    <Header subtitle={app.subtitle}/>
 		<Action 
 			pickOption={this.pickOption}
 			hasOptions={this.state.options.length >0}/>
@@ -72,6 +69,9 @@ const Header = (props)=> {
     );
   }
 
+	Header.defaultProps = {
+		title: "Indecision App.."
+	}
 
 const Action = (props) => {
     return (
@@ -122,9 +122,9 @@ class AddOption extends React.Component {
 		const error = this.props.handleAddOption(option);
 		console.log (error);
 		if (error){
-			this.setState(() => {return {error}})
+			this.setState(() =>  ({error}));
 		}else {
-			this.setState(() => {return {error:undefined}})
+			this.setState(() =>  ({error:undefined}));
 		}
 	}
 
